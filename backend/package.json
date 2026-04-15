@@ -1,41 +1,15 @@
 {
   "name": "backend",
-  "version": "0.1.0",
-  "private": true,
-  "description": "A Strapi application",
+  "version": "1.0.50",
   "scripts": {
-    "build": "strapi build",
-    "console": "strapi console",
-    "deploy": "strapi deploy",
-    "dev": "strapi develop",
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "strapi": "strapi",
-    "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.41.1",
-    "@strapi/plugin-users-permissions": "5.41.1",
-    "@strapi/strapi": "5.41.1",
-    "pg": "8.20.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "^6.0.0",
-    "styled-components": "^6.0.0"
+    "elysia": "latest"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "typescript": "^5"
+    "bun-types": "latest"
   },
-  "engines": {
-    "node": ">=20.0.0 <=24.x.x",
-    "npm": ">=6.0.0"
-  },
-  "strapi": {
-    "uuid": "3925bd1e-1c30-465e-8353-984d657cfb06",
-    "installId": "fcd66d4a75161f361cf662d66fe029d9037d07817e5388d5c6d2ba68e35eee5d"
-  }
+  "module": "src/index.js"
 }
