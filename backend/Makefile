@@ -4,7 +4,8 @@ PROD_COMPOSE = docker compose -f docker-compose.yml
 .PHONY: dev dev-build dev-down prod prod-build prod-down
 
 dev:
-	$(DEV_COMPOSE) up --build -d
+	$(DEV_COMPOSE) build --no-cache
+	$(DEV_COMPOSE) up -d --force-recreate
 
 dev-build:
 	$(DEV_COMPOSE) build
