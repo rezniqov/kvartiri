@@ -1,7 +1,8 @@
+
 DEV_COMPOSE = docker compose -f docker-compose.dev.yml
 PROD_COMPOSE = docker compose -f docker-compose.yml
 
-.PHONY: dev dev-build dev-down prod prod-build prod-down
+.PHONY: dev dev-build dev-down prod prod-build prod-down generate migrate-dev
 
 dev:
 	$(DEV_COMPOSE) build --no-cache
@@ -21,3 +22,9 @@ prod-build:
 
 prod-down:
 	$(PROD_COMPOSE) down
+
+generate:
+	bunx --bun prisma generate
+
+migrate-dev:
+	bunx --bun prisma migrate dev --name init

@@ -1,6 +1,6 @@
 import { Elysia, t } from 'elysia';
 import { prisma } from './lib/prisma';
-import { TodoPlain } from './generated/prismabox/Todo';
+import { AuthorPlain } from './generated/prismabox/Author';
 
 const app = new Elysia()
   // Health check
@@ -11,13 +11,11 @@ const app = new Elysia()
   .get(
     '/todos',
     async () => {
-      const todos = await prisma.todo.findMany({
-        orderBy: { createdAt: 'desc' },
-      });
+      const todos = await prisma.author.findMany();
       return todos;
     },
     {
-      response: t.Array(TodoPlain),
+      response: t.Array(AuthorPlain),
     },
   )
   .listen(3000);

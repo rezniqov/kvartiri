@@ -3,7 +3,9 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "migrate-dev": "bunx --bun prisma migrate dev --name init",
+    "generate-dev": "bunx --bun prisma generate"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.7.0",
