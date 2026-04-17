@@ -1,6 +1,7 @@
 
 DEV_COMPOSE = docker compose -f docker-compose.dev.yml
 PROD_COMPOSE = docker compose -f docker-compose.yml
+PRISMA = bunx --bun prisma
 
 .PHONY: dev dev-build dev-down prod prod-build prod-down generate migrate-dev
 
@@ -24,7 +25,7 @@ prod-down:
 	$(PROD_COMPOSE) down
 
 generate:
-	bunx --bun prisma generate
+	$(PRISMA) generate
 
 migrate-dev:
-	bunx --bun prisma migrate dev --name init
+	$(PRISMA) migrate dev --name init
